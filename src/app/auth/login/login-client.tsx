@@ -244,10 +244,7 @@ export default function LoginPage({ platformBranding }: LoginPageProps) {
           <Separator className="my-6" />
 
           <p className="text-center text-sm text-muted-foreground">
-            Don&apos;t have an account?{' '}
-            <Link href="/auth/register" className="font-medium text-primary hover:underline">
-              Sign up
-            </Link>
+            Accounts are provisioned by your FITCORE administrator.
           </p>
         </div>
       </div>
