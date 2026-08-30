@@ -72,44 +72,8 @@ const NAV_ITEMS = [
     icon: Users,
     items: [
       { title: 'Members', href: '/app/members', icon: Users },
-      { title: 'Memberships', href: '/app/memberships', icon: CreditCard },
-      { title: 'Attendance', href: '/app/attendance', icon: Calendar },
       { title: 'Check-in', href: '/app/checkin', icon: UserPlus },
     ],
-  },
-  {
-    title: 'Business',
-    icon: DollarSign,
-    items: [
-      { title: 'Payments', href: '/app/payments', icon: CreditCard },
-      { title: 'Invoices', href: '/app/invoices', icon: FileText },
-      { title: 'Expenses', href: '/app/expenses', icon: Truck },
-      { title: 'Reports', href: '/app/reports', icon: BarChart3 },
-    ],
-  },
-  {
-    title: 'Operations',
-    icon: Activity,
-    items: [
-      { title: 'Classes', href: '/app/classes', icon: Dumbbell },
-      { title: 'Schedules', href: '/app/schedules', icon: Calendar },
-      { title: 'Bookings', href: '/app/bookings', icon: ClipboardCheck },
-      { title: 'Trainers', href: '/app/trainers', icon: Target },
-    ],
-  },
-  {
-    title: 'Growth',
-    icon: Zap,
-    items: [
-      { title: 'Leads', href: '/app/leads', icon: UserPlus },
-      { title: 'Workout Plans', href: '/app/workouts', icon: ClipboardList },
-      { title: 'Equipment', href: '/app/equipment', icon: Dumbbell },
-    ],
-  },
-  {
-    title: 'Analytics',
-    href: '/app/analytics',
-    icon: BarChart3,
   },
 ]
 
