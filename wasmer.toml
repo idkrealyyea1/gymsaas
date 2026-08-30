@@ -1,0 +1,73 @@
+package:
+  name: "gymsaas-platform"
+  version: "1.0.0"
+  description: "Gym Management SaaS Platform"
+  main: "server.js"
+  scripts:
+    build: "npm run build"
+    start: "npm start"
+  files:
+    - "src/**/*"
+    - "public/**/*"
+    - "package.json"
+    - "prisma/**/*"
+    - "next.config.js"
+    - "tsconfig.json"
+    - "tailwind.config.ts"
+    - "postcss.config.js"
+    - ".env.example"
+  ignore:
+    - "node_modules"
+    - ".next"
+    - ".git"
+    - "*.log"
+    - ".env*"
+    - ".wasmer"
+    - ".wasmerignore"
+    - "coverage"
+    - ".nyc_output"
+    - "*.tsbuildinfo"
+    - "prisma/migrations"
+    - "*.sqlite"
+    - "*.sqlite3"
+    - "dist"
+    - "build"
+    - "*.tgz"
+    - "*.md"
+    - "DEPLOYMENT.md"
+    - "HANDOFF.md"
+    - "README.md"
+    - "tests/**/*"
+    - "scripts/**/*"
+    - "*.png"
+    - "*.jpg"
+    - "*.jpeg"
+    - "*.gif"
+    - "*.svg"
+    - "*.ico"
+
+manifest:
+  node_version: "20"
+  package_manager: "npm"
+  install_command: "npm ci --legacy-peer-deps"
+  build_command: "npm run build"
+  start_command: "npm start"
+  health_check_path: "/api/health"
+
+annotations:
+  anybuild.run/config:
+    commands:
+      build: "npm run build"
+      start: "npm start"
+    edgejs_enable: true
+    edgejs_precompile: true
+    name: "out"
+    node_install_inputs:
+      - "package.json"
+    node_package_manager: "npm"
+    node_package_name: "gymsaas-platform"
+    node_remove_native_binaries: true
+    node_server: "nextjs"
+  anybuild.run/provider: "node"
+  anybuild.run/version: "0.28.0"
+  wasmer.io/version: "7.3.0"

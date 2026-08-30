@@ -1,0 +1,24 @@
+# Wasmer ignore file - similar to .gitignore
+node_modules/
+.next/
+.env
+.env.local
+.env.production.local
+*.log
+npm-debug.log*
+.DS_Store
+*.pem
+.vscode/
+.idea/
+*.swp
+*.swo
+coverage/
+.nyc_output/
+*.tsbuildinfo
+prisma/migrations/
+*.sqlite
+*.sqlite3
+dist/
+build/
+*.tgz
+.wasmer/
