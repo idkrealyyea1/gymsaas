@@ -113,7 +113,7 @@ export default function CheckInClient({
           </div>
           <div className="flex gap-2">
             <Button variant="outline" asChild>
-              <Link href="/app/members/new"><Plus className="h-4 w-4 mr-2" />Add Member</Link>
+              <Link href="/app/members"><Plus className="h-4 w-4 mr-2" />Add Member</Link>
             </Button>
             <Button asChild style={{ backgroundColor: primaryColor }}>
               <Link href="/app/members"><UserPlus className="h-4 w-4 mr-2" />All Members</Link>

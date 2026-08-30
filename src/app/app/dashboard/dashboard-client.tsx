@@ -171,7 +171,7 @@ export function DashboardClient({
           </div>
           <div className="flex gap-2">
             <Button variant="outline" asChild>
-              <a href="/app/members/new">Add Member</a>
+              <a href="/app/members">Add Member</a>
             </Button>
             <Button asChild style={{ backgroundColor: primaryColor }}>
               <a href="/app/checkin">Check-in</a>
@@ -181,7 +181,7 @@ export function DashboardClient({
 
         {/* Quick Actions */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          <QuickActionButton icon={<UserPlus className="h-5 w-5" />} label="Add Member" href="/app/members/new" color={primaryColor} />
+          <QuickActionButton icon={<UserPlus className="h-5 w-5" />} label="Add Member" href="/app/members" color={primaryColor} />
           <QuickActionButton icon={<DollarSign className="h-5 w-5" />} label="Record Payment" href="/app/payments/new" color={accentColor} />
           <QuickActionButton icon={<Calendar className="h-5 w-5" />} label="Check Attendance" href="/app/checkin" color="#3B82F6" />
           <QuickActionButton icon={<CreditCard className="h-5 w-5" />} label="Create Membership" href="/app/memberships/new" color="#8B5CF6" />

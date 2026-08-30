@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { useState } from 'react'
-import { signIn } from 'next-auth/react'
+import { signIn, getSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -57,7 +57,10 @@ export default function LoginPage({ platformBranding }: LoginPageProps) {
         toast.error(result.error)
       } else {
         toast.success('Welcome back!')
-        router.push(callbackUrl)
+        const session = await getSession()
+        const dest =
+          session?.user?.role === 'SUPER_ADMIN' ? '/admin' : callbackUrl
+        router.push(dest)
         router.refresh()
       }
     } catch (err) {

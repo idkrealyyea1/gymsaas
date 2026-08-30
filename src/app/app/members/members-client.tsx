@@ -170,6 +170,48 @@ export function MembersClient({ gym, members, pagination, filters, statuses }: M
   const primaryColor = theme.primary
   const accentColor = theme.accent
 
+  const openCreateDialog = () => {
+    setEditingMember(null)
+    form.reset({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      dateOfBirth: '',
+      gender: '',
+      address: '',
+      city: '',
+      country: '',
+      postalCode: '',
+      emergencyContactName: '',
+      emergencyContactPhone: '',
+      emergencyContactRelation: '',
+      notes: '',
+    })
+    setIsCreateOpen(true)
+  }
+
+  const openEditDialog = (member: any) => {
+    setEditingMember(member)
+    form.reset({
+      firstName: member.firstName || '',
+      lastName: member.lastName || '',
+      email: member.email || '',
+      phone: member.phone || '',
+      dateOfBirth: member.dateOfBirth ? String(member.dateOfBirth).slice(0, 10) : '',
+      gender: member.gender || '',
+      address: member.address || '',
+      city: member.city || '',
+      country: member.country || '',
+      postalCode: member.postalCode || '',
+      emergencyContactName: member.emergencyContact?.name || '',
+      emergencyContactPhone: member.emergencyContact?.phone || '',
+      emergencyContactRelation: member.emergencyContact?.relation || '',
+      notes: member.notes || '',
+    })
+    setIsCreateOpen(true)
+  }
+
   return (
     <GymThemeProvider>
       <div className="space-y-6">
@@ -180,11 +222,9 @@ export function MembersClient({ gym, members, pagination, filters, statuses }: M
           </div>
           <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
             <DialogTrigger asChild>
-              <Button asChild style={{ backgroundColor: primaryColor }}>
-                <Link href="/app/members/new">
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add Member
-                </Link>
+              <Button type="button" style={{ backgroundColor: primaryColor }} onClick={openCreateDialog}>
+                <Plus className="h-4 w-4 mr-2" />
+                Add Member
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-2xl">
@@ -425,7 +465,10 @@ export function MembersClient({ gym, members, pagination, filters, statuses }: M
                   {members.length === 0 ? (
                     <TableRow>
                       <TableCell colSpan={8} className="text-center py-12 text-muted-foreground">
-                        No members found. <Button variant="link" asChild className="ml-2"><Link href="/app/members/new">Add your first member</Link></Button>
+                        No members found.{' '}
+                        <Button variant="link" onClick={openCreateDialog} className="ml-2">
+                          Add your first member
+                        </Button>
                       </TableCell>
                     </TableRow>
                   ) : (
@@ -480,14 +523,8 @@ export function MembersClient({ gym, members, pagination, filters, statuses }: M
                         </TableCell>
                         <TableCell className="text-right">
                           <div className="flex items-center justify-end gap-1">
-                            <Button variant="ghost" size="icon" asChild>
-                              <Link href={`/app/members/${member.id}`}><Eye className="h-4 w-4" /></Link>
-                            </Button>
-                            <Button variant="ghost" size="icon" asChild>
-                              <Link href={`/app/members/${member.id}/edit`}><Edit className="h-4 w-4" /></Link>
-                            </Button>
-                            <Button variant="ghost" size="icon" asChild>
-                              <Link href={`/app/members/${member.id}/qr`}><QrCode className="h-4 w-4" /></Link>
+                            <Button variant="ghost" size="icon" onClick={() => openEditDialog(member)}>
+                              <Edit className="h-4 w-4" />
                             </Button>
                             <Button variant="ghost" size="icon" onClick={() => setDeletingMember(member.id)}>
                               <Trash2 className="h-4 w-4 text-destructive" />

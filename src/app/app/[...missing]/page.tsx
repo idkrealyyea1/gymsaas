@@ -1,5 +1,5 @@
-import AppNotFound from '../not-found'
+import { UnderConstruction } from '@/components/under-construction'
 
 export default async function MissingPage() {
-  return <AppNotFound />
+  return <UnderConstruction />
 }
