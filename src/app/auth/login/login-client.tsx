@@ -191,15 +191,7 @@ export default function LoginPage({ platformBranding }: LoginPageProps) {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  href="/auth/forgot-password"
-                  className="text-sm text-primary hover:underline"
-                >
-                  Forgot password?
-                </Link>
-              </div>
+              <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -246,6 +238,16 @@ export default function LoginPage({ platformBranding }: LoginPageProps) {
           <p className="text-center text-sm text-muted-foreground">
             Accounts are provisioned by your FITCORE administrator.
           </p>
+
+          <Separator className="my-6" />
+
+          <div className="rounded-lg border p-4 text-xs" style={{ borderColor: '#374151' }}>
+            <p className="font-semibold mb-2">Demo credentials</p>
+            <div className="space-y-1 text-muted-foreground">
+              <p>Gym Staff: slug <code className="text-primary">iron-house-fitness</code> · <code className="text-primary">owner@ironhousefitness.com</code> / <code className="text-primary">owner123</code></p>
+              <p>Super Admin: <code className="text-primary">admin@fitcore.com</code> / <code className="text-primary">superadmin123</code></p>
+            </div>
+          </div>
         </div>
       </div>
     </GymThemeProvider>
