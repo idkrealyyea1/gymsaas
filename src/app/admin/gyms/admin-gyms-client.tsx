@@ -256,7 +256,7 @@ export function AdminGymsClient({ gyms, pagination, filters }: AdminGymsClientPr
                   Showing {(pagination.page - 1) * pagination.limit + 1} to {Math.min(pagination.page * pagination.limit, pagination.total)} of {pagination.total} gyms
                 </p>
                 <Pagination>
-                  <Pagination.Prev onClick={() => handlePageChange(pagination.page - 1)} disabled={pagination.page === 1} />
+                  <Pagination.Previous onClick={() => handlePageChange(pagination.page - 1)} disabled={pagination.page === 1} />
                   {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
                     let pageNum: number
                     if (pagination.totalPages <= 5) pageNum = i + 1

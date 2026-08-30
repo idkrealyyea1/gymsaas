@@ -509,7 +509,7 @@ export function MembersClient({ gym, members, pagination, filters, statuses }: M
                   {pagination.total} members
                 </p>
                 <Pagination>
-                  <Pagination.Prev
+                  <Pagination.Previous
                     onClick={() => handlePageChange(pagination.page - 1)}
                     disabled={pagination.page === 1}
                   />
